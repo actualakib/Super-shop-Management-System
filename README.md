@@ -46,7 +46,7 @@ This project is still under development. Currently, it serves as a **prototype/s
 - **Major Update**: The next release will add more dynamic data handling, enabling seamless updates to product information and transaction records.
 - **Enhanced File Management**: Additional text files will be added to extend functionality.
 
-This is version **"New Features 1.0.3"**. More updates are planned before moving to the C++ version.
+This is version **"New Features 1.0.3"**. Major updates are planned before moving to the C++ version.
 
 ## Future Plans on This Project
 Future iterations of this project will be developed in **C++**, adding object-oriented features and enhanced functionality. Currently, this prototype is focused on demonstrating basic shop management features in C. Planned features for the **C++ version 2.0.1** include:
