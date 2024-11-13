@@ -1,0 +1,4 @@
+Available products:
+Apple - $1.00
+Banana - $0.50
+Orange - $0.75
