@@ -57,3 +57,11 @@ Future iterations of this project will be developed in **C++**, adding object-or
 
 With this project, I aim to provide a comprehensive and scalable solution for small-to-medium-sized shop management, starting with a simple C-based prototype and evolving into a robust C++ application.
 
+## Authors
+
+- [@actualakib](https://github.com/actualakib)
+
+## License
+
+[MIT LICENSE](LICENSE)
+
