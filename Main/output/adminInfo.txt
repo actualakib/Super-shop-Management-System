@@ -1,1 +1,1 @@
-adminUser adminPass
+admin1 password1

@@ -1,0 +1,20 @@
+1. Mango      - 200.00 Tk/1kg      - 448.50 kg stock
+2. Banana  - 90.00 Tk/1kg  - 0.00 kg stock
+3. Garam Masala - 75.00 Tk/100gm - 2900.00 gm stock
+4. Pressure Cooker - 5660.00 Tk/1piece - 8.00 piece stock
+5. Rice  - 55.00 Tk/1kg  - 1496.50 kg stock
+6. Sugar  - 85.00 Tk/1kg  - 498.50 kg stock
+7. Salt - 35.00 Tk/1kg - 250.00 kg stock
+8. Milk Powder - 580.00 Tk/1kg - 200.00 kg stock
+9. Soap - 45.00 Tk/1piece - 300.00 piece stock
+10. Egg - 12.00 Tk/1piece - 1000.00 piece stock
+11. Chicken - 150.00 Tk/1kg - 50.00 kg stock
+12. Fish - 250.00 Tk/1kg - 60.00 kg stock
+13. Notebook - 25.00 Tk/1piece - 150.00 piece stock
+14. Pen - 10.00 Tk/1piece - 500.00 piece stock
+15. Pencil  - 5.00 Tk/1piece  - 797.00 piece stock
+16. Biscuits - 35.00 Tk/100gm - 1000.00 gm stock
+17. Juice  - 120.00 Tk/1liter  - 0.00 liter stock
+18. Ice Cream - 75.00 Tk/500ml - 40.00 liter stock
+19. Oil  - 170.00 Tk/1liter  - 98.00 liter stock
+20. Detergent - 65.00 Tk/100gm - 500.00 gm stock

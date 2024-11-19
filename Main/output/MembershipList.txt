@@ -1,0 +1,3 @@
+John Doe ~ 0123456789 ~ 123 Street Name ~ KSKGPI ~ 786.00 Tk
+Alice Smith ~ 0987654321 ~ 456 Another St ~ BDSMPO ~ 96.00 Tk
+Bob Johnson ~ 1122334455 ~ 789 Third Ave ~ XYTCUT ~ 78.00 Tk

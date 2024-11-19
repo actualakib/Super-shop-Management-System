@@ -1,5 +1,0 @@
-Apple - In Stock: 50
-Banana - In Stock: 100
-Orange - In Stock: 75
-Milk - In Stock: 20
-Bread - In Stock: 30

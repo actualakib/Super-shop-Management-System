@@ -1,3 +1,0 @@
-Transaction ID: 001, Total: $15.50, Date: 2024-11-01
-Transaction ID: 002, Total: $22.00, Date: 2024-11-02
-Transaction ID: 003, Total: $30.75, Date: 2024-11-03
