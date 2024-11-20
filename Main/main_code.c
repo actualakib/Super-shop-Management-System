@@ -171,8 +171,7 @@ void adminPanel()
             updatePrice();
             break;
         case 3:
-            printf("Under construction! Try again.\n");
-            // outOfStockNotifications();
+            outOfStockNotifications();
             break;
         case 4:
             return;
@@ -416,15 +415,32 @@ void checkOutOfStock(const char *productName, double stock)
         time_t now = time(NULL);
         struct tm *local = localtime(&now);
         strftime(timestamp, sizeof(timestamp), "%A, %Y-%m-%d %I:%M:%S %p", local);
+        FILE *file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
+        int serialNumber = 0;
 
-        FILE *file = fopen(OUT_OF_STOCK_LIST_FILE, "a");
         if (file)
         {
-            fprintf(file, "%s - %s\n", productName, timestamp);
+            char line[256];
+            while (fgets(line, sizeof(line), file))
+            {
+                int currentSerial;
+                if (sscanf(line, "%d.", &currentSerial) == 1 && currentSerial > serialNumber)
+                {
+                    serialNumber = currentSerial; 
+                }
+            }
+            fclose(file);
+        }
+        serialNumber++; 
+        file = fopen(OUT_OF_STOCK_LIST_FILE, "a");
+        if (file)
+        {
+            fprintf(file, "%d. %s  - %s\n", serialNumber, productName, timestamp);
             fclose(file);
         }
     }
 }
+
 void approveRefund()
 {
     char memberID[10], item[50];
@@ -739,105 +755,54 @@ void updatePrice()
         printf("Product with serial number %d not found.\n", serialNumberToUpdate);
     }
 }
-// void outOfStockNotifications()
-// {
-//     FILE *file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
-//     if (!file)
-//     {
-//         printf("Error: Unable to open %s. It might not exist.\n", OUT_OF_STOCK_LIST_FILE);
-//         return;
-//     }
-//     char line[200];
-//     int isEmpty = 1;
-//     printf("\n--- Out of Stock Products ---\n");
-//     while (fgets(line, sizeof(line), file))
-//     {
-//         printf("%s", line);
-//         isEmpty = 0;
-//     }
-//     fclose(file);
-//     if (isEmpty)
-//     {
-//         printf("No items are currently out of stock.\n");
-//         return;
-//     }
-//     char productName[100];
-//     float quantityToAdd;
-//     printf("\nEnter product name from the out of stock list: ");
-//     fgets(productName, sizeof(productName), stdin);
-//     productName[strcspn(productName, "\n")] = '\0';
-
-//     printf("Enter the quantity to add (e.g., 50.00 liter, 1000.00 gm): ");
-//     scanf("%f", &quantityToAdd);
-//     getchar();
-
-//     FILE *productsFile = fopen(PRODUCTS_LIST_FILE, "r");
-//     FILE *tempFile = fopen("temp.txt", "w");
-//     if (!productsFile || !tempFile)
-//     {
-//         printf("Error: Unable to open products list.\n");
-//         return;
-//     }
-//     char productLine[256];
-//     int found = 0;
-//     int maxSerialNumber = 0;
-//     while (fgets(productLine, sizeof(productLine), productsFile))
-//     {
-//         int serialNumber;
-//         char existingProductName[100], price[50], stock[50];
-//         float currentStock;
-//         if (sscanf(productLine, "%d. %99[^-] - %49[^-] - %49[^\n]", &serialNumber, existingProductName, price, stock) == 4)
-//         {
-//             if (serialNumber > maxSerialNumber)
-//             {
-//                 maxSerialNumber = serialNumber;
-//             }
-
-//             if (strstr(existingProductName, productName) != NULL)
-//             {
-//                 if (sscanf(stock, "%f", &currentStock) == 1)
-//                 {
-//                     currentStock += quantityToAdd;
-//                     fprintf(tempFile, "%d. %s - %s - %.2f stock\n", serialNumber, existingProductName, price, currentStock);
-//                     found = 1;
-//                 }
-//             }
-//             else
-//             {
-//                 fputs(productLine, tempFile);
-//             }
-//         }
-//     }
-//     fclose(productsFile);
-//     fclose(tempFile);
-//     if (found)
-//     {
-//         remove(PRODUCTS_LIST_FILE);
-//         rename("temp.txt", PRODUCTS_LIST_FILE);
-//         printf("Product '%s' has been restocked with %.2f more units.\n", productName, quantityToAdd);
-//         FILE *outOfStockFile = fopen(OUT_OF_STOCK_LIST_FILE, "r");
-//         FILE *tempOutOfStockFile = fopen("temp_out_of_stock.txt", "w");
-//         if (!outOfStockFile || !tempOutOfStockFile)
-//         {
-//             printf("Error: Unable to open out of stock list.\n");
-//             return;
-//         }
-//         while (fgets(line, sizeof(line), outOfStockFile))
-//         {
-//             if (strstr(line, productName) == NULL)
-//             {
-//                 fputs(line, tempOutOfStockFile);
-//             }
-//         }
-//         fclose(outOfStockFile);
-//         fclose(tempOutOfStockFile);
-//         remove(OUT_OF_STOCK_LIST_FILE);
-//         rename("temp_out_of_stock.txt", OUT_OF_STOCK_LIST_FILE);
-
-//         printf("Product '%s' has been removed from the out of stock list.\n", productName);
-//     }
-//     else
-//     {
-//         printf("Product '%s' not found in Products List.\n", productName);
-//     }
-// }
+void outOfStockNotifications()
+{
+    FILE *file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
+    if (!file)
+    {
+        printf("Error: Unable to open OutOfStockList.txt.\n");
+        return;
+    }
+    char line[256];
+    printf("\n--- Out of Stock Products ---\n");
+    int serial = 1;
+    while (fgets(line, sizeof(line), file))
+    {
+        printf("%s", line);
+        serial++;
+    }
+    fclose(file);
+    printf("\nEnter the serial number of the product to restock: ");
+    int selectedSerial;
+    scanf("%d", &selectedSerial);
+    file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
+    if (!file)
+    {
+        printf("Error: Unable to open OutOfStockList.txt.\n");
+        return;
+    }
+    FILE *tempFile = fopen("temp_out_of_stock.txt", "w");
+    if (!tempFile)
+    {
+        printf("Error: Unable to create temporary file.\n");
+        fclose(file);
+        return;
+    }
+    serial = 1;
+    while (fgets(line, sizeof(line), file))
+    {
+        if (sscanf(line, "%d.", &serial) == 1 && serial != selectedSerial)
+        {
+            fprintf(tempFile, "%s", line);
+        }
+        else
+        {
+            serial++;
+        }
+    }
+    fclose(file);
+    fclose(tempFile);
+    remove(OUT_OF_STOCK_LIST_FILE);
+    rename("temp_out_of_stock.txt", OUT_OF_STOCK_LIST_FILE);
+    printf("\nProduct with serial number %d has been removed from the Out of Stock list.\n", selectedSerial);
+}
