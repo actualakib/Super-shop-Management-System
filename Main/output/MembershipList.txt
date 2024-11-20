@@ -1,3 +1,6 @@
-John Doe ~ 0123456789 ~ 123 Street Name ~ KSKGPI ~ 786.00 Tk
-Alice Smith ~ 0987654321 ~ 456 Another St ~ BDSMPO ~ 96.00 Tk
-Bob Johnson ~ 1122334455 ~ 789 Third Ave ~ XYTCUT ~ 78.00 Tk
+XYTCUT ~ Bob Johnson   ~ 1122334455   ~ 789 Third Ave   ~ 478.00 Tk
+ABCDXY ~ Alice Green ~ 9988776655 ~ 123 First St ~ 50.00 Tk
+MNOPQR ~ John Doe  ~ 5566778899  ~ 456 Second Blvd  ~ 320.00 Tk
+AFOYSD ~ Tanjina Sarkar  ~ 83792374  ~ sfdhfh  sdfh; a  ~ 1500.00 Tk
+UADEYR ~ Abul ~ 7234892 ~ karon bazar ~ 0.00 Tk
+RGTNAL ~ Shakib  ~ 01978769878  ~ Daffodil Smart City  ~ 1800.00 Tk

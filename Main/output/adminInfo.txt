@@ -1,1 +1,1 @@
-admin1 password1
+admin password

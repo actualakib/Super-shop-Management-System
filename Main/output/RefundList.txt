@@ -1,4 +1,4 @@
-BNM-JD0123456789 ~ Orange ~ 30 Tk ~ 2 ~ 13:10:01
-BNM-AS0987654321 ~ Diaper ~ 200 Tk ~ 1 ~ 13:15:30
-BNM-BJ1122334455 ~ Shampoo ~ 100 Tk ~ 1 ~ 13:20:45
-BNM-JD0123456789 ~ Apple ~ 1 ~ 10
+BDSMPO ~ Mango ~ 3 ~ Wednesday, 2024-11-20 02:25:47 PM
+ABCDXY ~ Oil ~ 3 ~ Wednesday, 2024-11-20 03:37:44 PM
+UADEYR ~ Oil ~ 5 ~ Wednesday, 2024-11-20 05:28:26 PM
+UADEYR ~ Oil ~ 5 ~ Wednesday, 2024-11-20 05:28:56 PM
