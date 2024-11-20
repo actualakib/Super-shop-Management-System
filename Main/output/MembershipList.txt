@@ -1,6 +1,3 @@
-XYTCUT ~ Bob Johnson   ~ 1122334455   ~ 789 Third Ave   ~ 478.00 Tk
-ABCDXY ~ Alice Green ~ 9988776655 ~ 123 First St ~ 50.00 Tk
-MNOPQR ~ John Doe  ~ 5566778899  ~ 456 Second Blvd  ~ 320.00 Tk
-AFOYSD ~ Tanjina Sarkar  ~ 83792374  ~ sfdhfh  sdfh; a  ~ 1500.00 Tk
-UADEYR ~ Abul ~ 7234892 ~ karon bazar ~ 0.00 Tk
-RGTNAL ~ Shakib  ~ 01978769878  ~ Daffodil Smart City  ~ 1800.00 Tk
+TAYBUL ~ Samia Malik   ~ 01234567890   ~ Mirpur 10   ~ 12000.00 Tk
+IIJULC ~ Tasve Samir  ~ 01234567890  ~ Uttara 11, road 2  ~ 400.00 Tk
+YSACSE ~ Akib ~ 01829383829 ~ Dhanmoni ~ 0.00 Tk

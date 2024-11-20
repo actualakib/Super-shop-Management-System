@@ -1,19 +1,101 @@
-1. Mango    - 200.00 Tk/1kg       - 475.50 stock
-2. Banana     - 90.00 Tk/1kg     - 10.00 stock
-3. Garam Masala    - 75.00 Tk/100gm    - 2910.00 stock
-4. Pressure Cooker    - 5660.00 Tk/1piece    - 37.00 stock
-5. Rice    - 55.00 Tk/1kg    - 1526.50 stock
-6. Sugar    - 85.00 Tk/1kg    - 528.50 stock
-7. Salt    - 35.00 Tk/1kg    - 10.00 stock
-8. Milk Powder   - 580.00 Tk/1kg   - 230.00 stock
-10. Egg   - 12.00 Tk/1piece   - 1030.00 stock
-11. Chicken   - 150.00 Tk/1kg   - 80.00 stock
-12. Fish   - 250.00 Tk/1kg   - 90.00 stock
-13. Notebook   - 25.00 Tk/1piece   - 180.00 stock
-14. Pen   - 10.00 Tk/1piece   - 530.00 stock
-15. Pencil    - 5.00 Tk/1piece    - 827.00 stock
-16. Biscuits   - 35.00 Tk/100gm   - 1030.00 stock
-17. Juice    - 120.00 Tk/1liter    - 30.00 stock
-18. Ice Cream   - 75.00 Tk/500ml   - 70.00 stock
-20. Detergent   - 65.00 Tk/100gm   - 530.00 stock
-21. Soap   - 95.00  - 309.00 stock
+1. Banana - 35.00 Tk/kg - 500.00 kg stock
+2. Rice - 40.00 Tk/kg - 200.00 kg stock
+3. Apple - 100.00 Tk/kg - 300.00 kg stock
+4. Salt - 15.00 Tk/kg - 200.00 kg stock
+5. Juice - 120.00 Tk/1liter - 100.00 liter stock
+6. Mango - 120.00 Tk/1kg - 150.00 kg stock
+7. Biscuits - 35.00 Tk/100gm - 5000.00 gm stock
+8. Ice Cream - 75.00 Tk/500ml - 200.00 liter stock
+9. Sugar - 50.00 Tk/kg - 300.00 kg stock
+10. Tea - 120.00 Tk/1kg - 100.00 kg stock
+11. Flour - 30.00 Tk/kg - 250.00 kg stock
+12. Cheese - 250.00 Tk/kg - 100.00 kg stock
+13. Butter - 200.00 Tk/kg - 150.00 kg stock
+14. Milk - 40.00 Tk/liter - 500.00 liter stock
+15. Tomato - 50.00 Tk/kg - 200.00 kg stock
+16. Onion - 20.00 Tk/kg - 250.00 kg stock
+17. Potato - 25.00 Tk/kg - 300.00 kg stock
+18. Cucumber - 30.00 Tk/kg - 200.00 kg stock
+19. Carrot - 40.00 Tk/kg - 150.00 kg stock
+20. Garlic - 80.00 Tk/kg - 100.00 kg stock
+21. Ginger - 60.00 Tk/kg - 120.00 kg stock
+22. Orange - 80.00 Tk/kg - 250.00 kg stock
+23. Lemon - 40.00 Tk/kg - 100.00 kg stock
+24. Watermelon - 35.00 Tk/kg - 500.00 kg stock
+25. Pineapple - 70.00 Tk/each - 300.00 each stock
+26. Papaya - 45.00 Tk/kg - 200.00 kg stock
+27. Lettuce - 35.00 Tk/kg - 150.00 kg stock
+28. Spinach - 30.00 Tk/kg - 180.00 kg stock
+29. Peas - 50.00 Tk/kg - 250.00 kg stock
+30. Corn - 60.00 Tk/kg - 300.00 kg stock
+31. Avocado - 120.00 Tk/each - 100.00 each stock
+32. Coconut - 90.00 Tk/each - 200.00 each stock
+33. Grapes - 120.00 Tk/kg - 150.00 kg stock
+34. Strawberry - 150.00 Tk/kg - 100.00 kg stock
+35. Blueberry - 200.00 Tk/kg - 50.00 kg stock
+36. Pear - 80.00 Tk/kg - 250.00 kg stock
+37. Kiwi - 150.00 Tk/kg - 100.00 kg stock
+38. Pomegranate - 120.00 Tk/each - 200.00 each stock
+39. Cherry - 200.00 Tk/kg - 50.00 kg stock
+40. Plums - 120.00 Tk/kg - 150.00 kg stock
+41. Mango Pickle - 100.00 Tk/500gm - 500.00 gm stock
+42. Papad - 50.00 Tk/pack - 1000.00 pack stock
+43. Noodles - 35.00 Tk/pack - 1500.00 pack stock
+44. Spaghetti - 60.00 Tk/pack - 1000.00 pack stock
+45. Macaroni - 70.00 Tk/pack - 500.00 pack stock
+46. Pasta - 80.00 Tk/pack - 400.00 pack stock
+47. Ketchup - 45.00 Tk/500ml - 1000.00 ml stock
+48. Mustard - 40.00 Tk/500ml - 800.00 ml stock
+49. Soy Sauce - 70.00 Tk/500ml - 600.00 ml stock
+50. Vinegar - 30.00 Tk/500ml - 1000.00 ml stock
+51. Mayonnaise - 80.00 Tk/500ml - 500.00 ml stock
+52. Hot Sauce - 60.00 Tk/500ml - 700.00 ml stock
+53. BBQ Sauce - 90.00 Tk/500ml - 300.00 ml stock
+54. Fish Sauce - 50.00 Tk/500ml - 800.00 ml stock
+55. Olive Oil - 150.00 Tk/500ml - 200.00 ml stock
+56. Vegetable Oil - 50.00 Tk/1liter - 1000.00 liter stock
+57. Sunflower Oil - 70.00 Tk/1liter - 500.00 liter stock
+58. Palm Oil - 40.00 Tk/1liter - 1200.00 liter stock
+59. Peanut Butter - 120.00 Tk/500gm - 800.00 gm stock
+60. Jam - 80.00 Tk/500gm - 1000.00 gm stock
+61. Honey - 200.00 Tk/500gm - 300.00 gm stock
+62. Milk Powder - 300.00 Tk/kg - 150.00 kg stock
+63. Coffee - 150.00 Tk/kg - 200.00 kg stock
+64. Tea Bags - 80.00 Tk/pack - 1000.00 pack stock
+65. Sugar Cubes - 40.00 Tk/pack - 500.00 pack stock
+66. Baking Powder - 60.00 Tk/pack - 1000.00 pack stock
+67. Yeast - 50.00 Tk/pack - 500.00 pack stock
+68. Corn Starch - 30.00 Tk/pack - 600.00 pack stock
+69. Cocoa Powder - 100.00 Tk/500gm - 500.00 gm stock
+70. Vanilla Extract  - 200.00 Tk/500ml  - 98.00 ml stock
+71. Almonds - 250.00 Tk/kg - 80.00 kg stock
+72. Walnuts - 300.00 Tk/kg - 60.00 kg stock
+73. Cashews - 350.00 Tk/kg - 90.00 kg stock
+74. Hazelnuts - 400.00 Tk/kg - 40.00 kg stock
+75. Pistachios - 500.00 Tk/kg - 30.00 kg stock
+76. Peanuts - 80.00 Tk/kg - 200.00 kg stock
+77. Chocolate - 150.00 Tk/pack - 400.00 pack stock
+78. Candy - 50.00 Tk/pack - 1000.00 pack stock
+79. Lollipops - 20.00 Tk/pack - 2000.00 pack stock
+80. Jelly - 40.00 Tk/pack - 1500.00 pack stock
+81. Ice Cream Cones - 25.00 Tk/pack - 1000.00 pack stock
+82. Biscotti - 120.00 Tk/pack - 500.00 pack stock
+83. Cookies - 80.00 Tk/pack - 1000.00 pack stock
+84. Cake  - 150.00 Tk/each  - 290.00 each stock
+85. Muffins - 100.00 Tk/pack - 600.00 pack stock
+86. Croissants - 120.00 Tk/pack - 400.00 pack stock
+87. Pies - 80.00 Tk/each - 200.00 each stock
+88. Brownies - 90.00 Tk/pack - 300.00 pack stock
+89. Doughnuts - 50.00 Tk/each - 800.00 each stock
+90. Pizza - 200.00 Tk/each - 150.00 each stock
+91. Bread - 30.00 Tk/loaf - 500.00 loaf stock
+92. Bagels - 50.00 Tk/pack - 300.00 pack stock
+93. English Muffins - 60.00 Tk/pack - 200.00 pack stock
+94. Flatbread - 70.00 Tk/pack - 150.00 pack stock
+95. Pita Bread - 40.00 Tk/pack - 400.00 pack stock
+96. Tortillas  - 50.00 Tk/pack  - 0.00 pack stock
+97. Hot Dog Buns - 30.00 Tk/pack - 500.00 pack stock
+98. Hamburger Buns - 40.00 Tk/pack - 300.00 pack stock
+99. Sandwich Bread - 50.00 Tk/loaf - 600.00 loaf stock
+100. Rye Bread   - 60.00 Tk/loaf   - 0.00 loaf stock
+101. Honey Comb  - 200.00 Tk/kg  - 19.00 kg stock
