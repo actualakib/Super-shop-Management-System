@@ -556,7 +556,8 @@ void generateMembershipID(char *id)
 {
     const char charset[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     srand(time(NULL) + rand());
-    for (int i = 0; i < 6; i++)
+    int i;
+    for ( i = 0; i < 6; i++)
     {
         id[i] = charset[rand() % 26];
     }
