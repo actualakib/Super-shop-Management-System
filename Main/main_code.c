@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <time.h>
+#define RESET_COLOR "\x1b[0m"
+#define CYAN_COLOR "\x1b[36m"
+#define MAGENTA_COLOR "\x1b[35m"
+#define YELLOW_COLOR "\x1b[33m"
 #define EMPLOYEE_LOGIN_FILE "EmployeeInfo.txt"
 #define ADMIN_LOGIN_FILE "AdminInfo.txt"
 #define PRODUCTS_LIST_FILE "ProductsList.txt"
@@ -35,15 +39,27 @@ int main()
     selectPanel();
     return 0;
 }
+
 void selectPanel()
 {
     while (1)
     {
+        printf(MAGENTA_COLOR);
+        printf(" ## ##   ###  ##   ## ##   ### ##            ## ##        ##   \n");
+        printf("##   ##   ##  ##  ##   ##   ##  ##           ##  ##     # ##   \n");
+        printf("####      ##  ##  ##   ##   ##  ##               ##    ## ##   \n");
+        printf(" #####    ## ###  ##   ##   ##  ##              ##    ##  ##   \n");
+        printf("    ###   ##  ##  ##   ##   ## ##              ##     ### ###  \n");
+        printf("##   ##   ##  ##  ##   ##   ##                #   ##      ##   \n");
+        printf(" ## ##   ###  ##   ## ##   ####              ######       ##   \n");
+        printf("                                                                \n");
+        printf(RESET_COLOR);
+
         int choice;
-        printf("\nSelect Panel:\n");
-        printf("1. Employee Login\n");
-        printf("2. Admin Login\n");
-        printf("Enter your choice: ");
+        printf(YELLOW_COLOR "\nSelect Panel:\n" RESET_COLOR);
+        printf(YELLOW_COLOR "1. Employee Login\n" RESET_COLOR);
+        printf(YELLOW_COLOR "2. Admin Login\n" RESET_COLOR);
+        printf(YELLOW_COLOR "Enter your choice: " RESET_COLOR);
         scanf("%d", &choice);
 
         switch (choice)
@@ -61,10 +77,11 @@ void selectPanel()
             }
             break;
         default:
-            printf("Invalid choice! Try again.\n");
+            printf(YELLOW_COLOR "Invalid choice! Try again.\n" RESET_COLOR);
         }
     }
 }
+
 int authenticateUser(const char *filename)
 {
     char storedUsername[50], storedPassword[50];
@@ -121,14 +138,15 @@ void employeePanel()
     while (1)
     {
         int empChoice;
-        printf("\n--- Employee Panel ---\n");
-        printf("1. Browse Products\n");
-        printf("2. Approve Refund\n");
-        printf("3. Add Membership\n");
-        printf("4. Inventory Out Of Stock\n");
-        printf("5. Log out\n");
-        printf("Enter your choice: ");
+        printf(CYAN_COLOR "\n--- Employee Panel ---\n" RESET_COLOR);
+        printf(CYAN_COLOR "1. Browse Products\n" RESET_COLOR);
+        printf(CYAN_COLOR "2. Approve Refund\n" RESET_COLOR);
+        printf(CYAN_COLOR "3. Add Membership\n" RESET_COLOR);
+        printf(CYAN_COLOR "4. Inventory Out Of Stock\n" RESET_COLOR);
+        printf(CYAN_COLOR "5. Log out\n" RESET_COLOR);
+        printf(CYAN_COLOR "Enter your choice: " RESET_COLOR);
         scanf("%d", &empChoice);
+
         switch (empChoice)
         {
         case 1:
@@ -146,22 +164,24 @@ void employeePanel()
         case 5:
             return;
         default:
-            printf("Invalid choice! Try again.\n");
+            printf(CYAN_COLOR "Invalid choice! Try again.\n" RESET_COLOR);
         }
     }
 }
+
 void adminPanel()
 {
     while (1)
     {
         int adminChoice;
-        printf("\n--- Admin Panel ---\n");
-        printf("1. Update Inventory\n");
-        printf("2. Update Price\n");
-        printf("3. Out Of Stock Notifications\n");
-        printf("4. Log out\n");
-        printf("Enter your choice: ");
+        printf(MAGENTA_COLOR "\n--- Admin Panel ---\n" RESET_COLOR);
+        printf(MAGENTA_COLOR "1. Update Inventory\n" RESET_COLOR);
+        printf(MAGENTA_COLOR "2. Update Price\n" RESET_COLOR);
+        printf(MAGENTA_COLOR "3. Out Of Stock Notifications\n" RESET_COLOR);
+        printf(MAGENTA_COLOR "4. Log out\n" RESET_COLOR);
+        printf(MAGENTA_COLOR "Enter your choice: " RESET_COLOR);
         scanf("%d", &adminChoice);
+
         switch (adminChoice)
         {
         case 1:
@@ -176,34 +196,36 @@ void adminPanel()
         case 4:
             return;
         default:
-            printf("Invalid choice! Try again.\n");
+            printf(MAGENTA_COLOR "Invalid choice! Try again.\n" RESET_COLOR);
         }
     }
 }
+
 void browseProducts()
 {
+
     FILE *file = fopen(PRODUCTS_LIST_FILE, "r");
     if (!file)
     {
-        printf("Error: Unable to open %s.\n", PRODUCTS_LIST_FILE);
+        printf(CYAN_COLOR "Error: Unable to open %s.\n" RESET_COLOR, PRODUCTS_LIST_FILE);
         return;
     }
-    printf("\nAvailable Products:\n");
+    printf(CYAN_COLOR "\nAvailable Products:\n" RESET_COLOR);
     char line[200];
     int totalProducts = 0;
     while (fgets(line, sizeof(line), file))
     {
-        printf("%s", line);
+        printf(CYAN_COLOR "%s" RESET_COLOR, line);
         totalProducts++;
     }
     fclose(file);
     int choice;
-    printf("\nEnter the serial number of the product you want to order: ");
+    printf(CYAN_COLOR "\nEnter the serial number of the product you want to order: " RESET_COLOR);
     scanf("%d", &choice);
 
     if (choice < 1 || choice > totalProducts)
     {
-        printf("Invalid choice! Returning to Employee Panel.\n");
+        printf(CYAN_COLOR "Invalid choice! Returning to Employee Panel.\n" RESET_COLOR);
         return;
     }
     file = fopen(PRODUCTS_LIST_FILE, "r");
@@ -445,22 +467,23 @@ void approveRefund()
 {
     char memberID[10], item[50];
     int quantity;
-    printf("Enter Member ID: ");
+    printf(CYAN_COLOR "Enter Member ID: " RESET_COLOR);
     scanf("%s", memberID);
-    printf("Enter Item Name: ");
+    printf(CYAN_COLOR "Enter Item Name: " RESET_COLOR);
     scanf(" %[^\n]", item);
-    printf("Enter Quantity: ");
+    printf(CYAN_COLOR "Enter Quantity: " RESET_COLOR);
     scanf("%d", &quantity);
     if (checkMembership(memberID))
     {
         logRefund(memberID, item, quantity);
-        printf("Refund approved and logged successfully.\n");
+        printf(CYAN_COLOR "Refund approved and logged successfully.\n" RESET_COLOR);
     }
     else
     {
-        printf("Refund denied: Membership not found.\n");
+        printf(CYAN_COLOR "Refund denied: Membership not found.\n" RESET_COLOR);
     }
 }
+
 int checkMembership(const char *memberID)
 {
     FILE *file = fopen(MEMBERSHIP_LIST_FILE, "r");
@@ -504,11 +527,11 @@ void logRefund(const char *memberID, const char *item, int quantity)
 void addMembership()
 {
     char name[50], phone[15], address[100], membershipID[7];
-    printf("Enter Customer Name: ");
+    printf(CYAN_COLOR "Enter Customer Name: " RESET_COLOR);
     scanf(" %[^\n]", name);
-    printf("Enter Phone Number: ");
+    printf(CYAN_COLOR "Enter Phone Number: " RESET_COLOR);
     scanf("%s", phone);
-    printf("Enter Address: ");
+    printf(CYAN_COLOR "Enter Address: " RESET_COLOR);
     scanf(" %[^\n]", address);
     do
     {
@@ -517,16 +540,18 @@ void addMembership()
     FILE *file = fopen(MEMBERSHIP_LIST_FILE, "a");
     if (!file)
     {
-        printf("Error: Unable to open %s.\n", MEMBERSHIP_LIST_FILE);
+        printf(CYAN_COLOR "Error: Unable to open %s.\n" RESET_COLOR, MEMBERSHIP_LIST_FILE);
         return;
     }
 
     fprintf(file, "%s ~ %s ~ %s ~ %s ~ 0.00 Tk\n", membershipID, name, phone, address);
     fclose(file);
 
-    printf("Membership successfully added!\n");
-    printf("Customer Name: %s\nPhone Number: %s\nAddress: %s\nMembership ID: %s\n", name, phone, address, membershipID);
+    printf(CYAN_COLOR "Membership successfully added!\n" RESET_COLOR);
+    printf(CYAN_COLOR "Customer Name: %s\nPhone Number: %s\nAddress: %s\nMembership ID: %s\n" RESET_COLOR,
+           name, phone, address, membershipID);
 }
+
 void generateMembershipID(char *id)
 {
     const char charset[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -562,23 +587,24 @@ void inventoryOutOfStock()
     FILE *file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
     if (!file)
     {
-        printf("Error: Unable to open %s. It might not exist.\n", OUT_OF_STOCK_LIST_FILE);
+        printf(CYAN_COLOR "Error: Unable to open %s. It might not exist.\n" RESET_COLOR, OUT_OF_STOCK_LIST_FILE);
         return;
     }
     char line[200];
     int isEmpty = 1;
-    printf("\n--- Out Of Stock Items ---\n");
+    printf(CYAN_COLOR "\n--- Out Of Stock Items ---\n" RESET_COLOR);
     while (fgets(line, sizeof(line), file))
     {
-        printf("%s", line);
+        printf(CYAN_COLOR "%s" RESET_COLOR, line);
         isEmpty = 0;
     }
     fclose(file);
     if (isEmpty)
     {
-        printf("No items are currently out of stock.\n");
+        printf(CYAN_COLOR "No items are currently out of stock.\n" RESET_COLOR);
     }
 }
+
 void updateInventory()
 {
     int choice;
@@ -586,30 +612,31 @@ void updateInventory()
     FILE *file, *tempFile;
     int maxSerialNumber = 0;
     char line[256];
-    printf("\n--- Update Inventory ---\n");
-    printf("1. Delete Product\n");
-    printf("2. Add Product\n");
-    printf("Enter choice: ");
+    printf(MAGENTA_COLOR "\n--- Update Inventory ---\n" RESET_COLOR);
+    printf(MAGENTA_COLOR "1. Delete Product\n" RESET_COLOR);
+    printf(MAGENTA_COLOR "2. Add Product\n" RESET_COLOR);
+    printf(MAGENTA_COLOR "Enter choice: " RESET_COLOR);
     scanf("%d", &choice);
     getchar();
+
     switch (choice)
     {
     case 1:
-        printf("Enter product name to delete: ");
+        printf(MAGENTA_COLOR "Enter product name to delete: " RESET_COLOR);
         fgets(productName, sizeof(productName), stdin);
         productName[strcspn(productName, "\n")] = '\0';
 
         file = fopen(PRODUCTS_LIST_FILE, "r");
         if (!file)
         {
-            printf("Error: Unable to open products list.\n");
+            printf(MAGENTA_COLOR "Error: Unable to open products list.\n" RESET_COLOR);
             return;
         }
 
         tempFile = fopen("temp.txt", "w");
         if (!tempFile)
         {
-            printf("Error: Unable to create temporary file.\n");
+            printf(MAGENTA_COLOR "Error: Unable to create temporary file.\n" RESET_COLOR);
             fclose(file);
             return;
         }
@@ -631,18 +658,18 @@ void updateInventory()
         {
             remove(PRODUCTS_LIST_FILE);
             rename("temp.txt", PRODUCTS_LIST_FILE);
-            printf("Product '%s' has been deleted successfully.\n", productName);
+            printf(MAGENTA_COLOR "Product '%s' has been deleted successfully.\n" RESET_COLOR, productName);
         }
         else
         {
-            printf("Product '%s' not found.\n", productName);
+            printf(MAGENTA_COLOR "Product '%s' not found.\n" RESET_COLOR, productName);
         }
         break;
     case 2:
         file = fopen(PRODUCTS_LIST_FILE, "r");
         if (!file)
         {
-            printf("Error: Unable to open products list.\n");
+            printf(MAGENTA_COLOR "Error: Unable to open products list.\n" RESET_COLOR);
             return;
         }
         while (fgets(line, sizeof(line), file))
@@ -658,72 +685,72 @@ void updateInventory()
         }
         fclose(file);
         maxSerialNumber++;
-        printf("Enter product name: ");
+        printf(MAGENTA_COLOR "Enter product name: " RESET_COLOR);
         fgets(productName, sizeof(productName), stdin);
         productName[strcspn(productName, "\n")] = '\0';
-        printf("Enter product price (e.g., 100.00 Tk/1kg): ");
+        printf(MAGENTA_COLOR "Enter product price (e.g., 100.00 Tk/1kg): " RESET_COLOR);
         fgets(price, sizeof(price), stdin);
         price[strcspn(price, "\n")] = '\0';
-        printf("Enter quantity (e.g., 1kg, 10 pieces, etc.): ");
+        printf(MAGENTA_COLOR "Enter quantity (e.g., 1kg, 10 pieces, etc.): " RESET_COLOR);
         fgets(quantity, sizeof(quantity), stdin);
         quantity[strcspn(quantity, "\n")] = '\0';
-        printf("Enter stock (e.g., 50.00 kg, 100.00 pieces): ");
+        printf(MAGENTA_COLOR "Enter stock (e.g., 50.00 kg, 100.00 pieces): " RESET_COLOR);
         fgets(stock, sizeof(stock), stdin);
         stock[strcspn(stock, "\n")] = '\0';
         file = fopen(PRODUCTS_LIST_FILE, "a");
         if (!file)
         {
-            printf("Error: Unable to open products list.\n");
+            printf(MAGENTA_COLOR "Error: Unable to open products list.\n" RESET_COLOR);
             return;
         }
         fprintf(file, "%d. %s - %s - %s stock\n", maxSerialNumber, productName, price, stock);
         fclose(file);
-        printf("Product '%s' has been added successfully with serial number %d.\n", productName, maxSerialNumber);
+        printf(MAGENTA_COLOR "Product '%s' has been added successfully with serial number %d.\n" RESET_COLOR, productName, maxSerialNumber);
         break;
     default:
-        printf("Invalid choice!\n");
+        printf(MAGENTA_COLOR "Invalid choice!\n" RESET_COLOR);
         break;
     }
 }
+
 void updatePrice()
 {
     int serialNumberToUpdate;
     char newPrice[50], line[256];
     FILE *file, *tempFile;
-    printf("\n--- Update Price ---\n");
+    printf(MAGENTA_COLOR "\n--- Update Price ---\n" RESET_COLOR);
     file = fopen(PRODUCTS_LIST_FILE, "r");
     if (!file)
     {
-        printf("Error: Unable to open products list.\n");
+        printf(MAGENTA_COLOR "Error: Unable to open products list.\n" RESET_COLOR);
         return;
     }
-    printf("Current Products in the list:\n");
-    int found = 0;
+    printf(MAGENTA_COLOR "Current Products in the list:\n" RESET_COLOR);
     while (fgets(line, sizeof(line), file))
     {
-        printf("%s", line);
+        printf(MAGENTA_COLOR "%s" RESET_COLOR, line);
     }
     fclose(file);
-    printf("Enter serial number of the product to update price: ");
+    printf(MAGENTA_COLOR "Enter serial number of the product to update price: " RESET_COLOR);
     scanf("%d", &serialNumberToUpdate);
     getchar();
-    printf("Enter new price (e.g., 100.00 Tk/1kg): ");
+    printf(MAGENTA_COLOR "Enter new price (e.g., 100.00 Tk/1kg): " RESET_COLOR);
     fgets(newPrice, sizeof(newPrice), stdin);
     newPrice[strcspn(newPrice, "\n")] = '\0';
     file = fopen(PRODUCTS_LIST_FILE, "r");
     if (!file)
     {
-        printf("Error: Unable to open products list.\n");
+        printf(MAGENTA_COLOR "Error: Unable to open products list.\n" RESET_COLOR);
         return;
     }
     tempFile = fopen("temp.txt", "w");
     if (!tempFile)
     {
-        printf("Error: Unable to create temporary file.\n");
+        printf(MAGENTA_COLOR "Error: Unable to create temporary file.\n" RESET_COLOR);
         fclose(file);
         return;
     }
-    found = 0;
+    int found = 0;
     while (fgets(line, sizeof(line), file))
     {
         int serialNumber;
@@ -748,43 +775,44 @@ void updatePrice()
     {
         remove(PRODUCTS_LIST_FILE);
         rename("temp.txt", PRODUCTS_LIST_FILE);
-        printf("Price of product with serial number %d has been updated to '%s'.\n", serialNumberToUpdate, newPrice);
+        printf(MAGENTA_COLOR "Price of product with serial number %d has been updated to '%s'.\n" RESET_COLOR, serialNumberToUpdate, newPrice);
     }
     else
     {
-        printf("Product with serial number %d not found.\n", serialNumberToUpdate);
+        printf(MAGENTA_COLOR "Product with serial number %d not found.\n" RESET_COLOR, serialNumberToUpdate);
     }
 }
+
 void outOfStockNotifications()
 {
     FILE *file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
     if (!file)
     {
-        printf("Error: Unable to open OutOfStockList.txt.\n");
+        printf(MAGENTA_COLOR "Error: Unable to open OutOfStockList.txt.\n" RESET_COLOR);
         return;
     }
     char line[256];
-    printf("\n--- Out of Stock Products ---\n");
+    printf(MAGENTA_COLOR "\n--- Out of Stock Products ---\n" RESET_COLOR);
     int serial = 1;
     while (fgets(line, sizeof(line), file))
     {
-        printf("%s", line);
+        printf(MAGENTA_COLOR "%s" RESET_COLOR, line);
         serial++;
     }
     fclose(file);
-    printf("\nEnter the serial number of the product to restock: ");
+    printf(MAGENTA_COLOR "\nEnter the serial number of the product to restock: " RESET_COLOR);
     int selectedSerial;
     scanf("%d", &selectedSerial);
     file = fopen(OUT_OF_STOCK_LIST_FILE, "r");
     if (!file)
     {
-        printf("Error: Unable to open OutOfStockList.txt.\n");
+        printf(MAGENTA_COLOR "Error: Unable to open OutOfStockList.txt.\n" RESET_COLOR);
         return;
     }
     FILE *tempFile = fopen("temp_out_of_stock.txt", "w");
     if (!tempFile)
     {
-        printf("Error: Unable to create temporary file.\n");
+        printf(MAGENTA_COLOR "Error: Unable to create temporary file.\n" RESET_COLOR);
         fclose(file);
         return;
     }
@@ -804,5 +832,5 @@ void outOfStockNotifications()
     fclose(tempFile);
     remove(OUT_OF_STOCK_LIST_FILE);
     rename("temp_out_of_stock.txt", OUT_OF_STOCK_LIST_FILE);
-    printf("\nProduct with serial number %d has been removed from the Out of Stock list.\n", selectedSerial);
+    printf(MAGENTA_COLOR "\nProduct with serial number %d has been removed from the Out of Stock list.\n" RESET_COLOR, selectedSerial);
 }
