@@ -50,7 +50,7 @@ This project is still under development. Currently, it serves as a prototype/ske
 - **Major Update**: The next release will add more dynamic data handling, enabling seamless updates to product information and transaction records.
 - **Enhanced File Management**: Additional text files will be added to extend functionality.
 
-This is version **New Release 1.1.6**. A few bugs were noted in **Release 1.1.5**, such as unnecessary spaces sometimes being created when adding items to files. However, no major issues were reported. These bugs have been fixed in this new version.
+This is version **New Release 1.2.0**. A few updates have been introduced since **Release 1.1.6**, including a table-styled list for a better user interface and added logo and text color for improved visual appeal. Minor formatting inconsistencies in previous versions have also been addressed. These enhancements aim to provide a more structured and engaging user experience.
 
 ## Future Plans for This Project
 Future iterations of this project will be developed in C++, adding object-oriented features and enhanced functionality. Currently, this prototype is focused on demonstrating basic shop management features in C. Planned features for the C++ version **2.0.1** include:
